@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">blogapp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_Home_fragment">home</string>
+    <string name="hello_Profile_fragment">profile_test</string>
+    <string name="hello_Bookmark_fragment">bookmark_test</string>
+</resources>
