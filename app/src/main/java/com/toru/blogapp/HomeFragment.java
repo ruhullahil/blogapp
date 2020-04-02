@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.toru.blogapp.retrofit.ApiClient;
+import com.toru.blogapp.retrofit.ApiInterface;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,10 +52,14 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final String TAG = "homefrgment";
+        ApiInterface apiInterface;
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
     @Override
@@ -60,5 +67,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+
     }
 }
