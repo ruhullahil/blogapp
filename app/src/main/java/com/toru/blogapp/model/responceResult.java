@@ -52,4 +52,14 @@ public class responceResult {
     public void setEtag(String etag) {
         this.etag = etag;
     }
+
+    @Override
+    public String toString() {
+        return "responceResult{" +
+                "kind='" + kind + '\'' +
+                ", nextPageToken='" + nextPageToken + '\'' +
+                ", Items=" + Items +
+                ", etag='" + etag + '\'' +
+                '}';
+    }
 }

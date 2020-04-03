@@ -1,14 +1,15 @@
 package com.toru.blogapp;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 public class Post {
     private String title ;
     private String time ;
-    private Image image;
+    private Bitmap image;
     private String PostUrl;
 
-    public Post(String title, String time, Image image, String postUrl) {
+    public Post(String title, String time, Bitmap image, String postUrl) {
         this.title = title;
         this.time = time;
         this.image = image;
@@ -31,11 +32,11 @@ public class Post {
         this.time = time;
     }
 
-    public Image getImageUrl() {
+    public Bitmap getImageUrl() {
         return image;
     }
 
-    public void setImageUrl(Image image) {
+    public void setImageUrl(Bitmap image) {
         this.image= image;
     }
 
