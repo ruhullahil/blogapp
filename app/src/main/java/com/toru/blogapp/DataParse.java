@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,8 +31,9 @@ public  class DataParse {
     private responceResult ResponceResult;
 
 
-    DataParse() {
+    private void InitialCall() {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Log.i(TAG,"________________________INITIAL METHOD called ____________________");
         Call<responceResult> call = apiInterface.getResult("AIzaSyC-eE8XmFlgetyAgbX5xLoon920vcuQwSM");
         call.enqueue(new Callback<responceResult>() {
 
@@ -70,26 +73,56 @@ public  class DataParse {
     public List<Post> getPosts() {
         List<Post> posts = new ArrayList<>();
         Post post = null;
+        Log.i("TAG","__________Post Method call ______________--");
+        InitialCall();
         for (itemes item: ResponceResult.Items) {
             post.setTitle(item.title);
             post.setTime(item.published);
             post.setPostUrl(item.url);
-
-
+            //post.setImageUrl(imageGet(item.content));
+            posts.add(post);
         }
 
         return posts;
     }
-     private Bitmap getImage(String imgUrl) throws IOException {
+     private Bitmap getImageFromUrl(String imgUrl) throws IOException {
 
          URL url = new URL(imgUrl);
          Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
          return bmp;
 
      }
-//     private  String getImageString(String content)
-//     {
-//
-//     }
+     private  String getImageString(String content)
+     {
+
+         String reg ="href=[\\'\"]?([^\\'\" >]+)";
+         Pattern r = Pattern.compile(reg);
+
+         // Now create matcher object.
+         Matcher m = r.matcher(content);
+         if (m.find( )) {
+             //System.out.println("Found value: " + m.group(0) );
+             return m.group(1);
+
+         }
+         return null;
+
+
+     }
+     private Bitmap imageGet(String content)
+     {
+         String url = getImageString(content);
+         if(url!=null)
+         {
+             try {
+                 return getImageFromUrl(url);
+             } catch (IOException e) {
+                 Log.i("theow ",e.getMessage());
+             }
+         }
+         return null;
+
+     }
+
 
 }

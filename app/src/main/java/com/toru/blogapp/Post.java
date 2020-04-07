@@ -6,14 +6,17 @@ import android.media.Image;
 public class Post {
     private String title ;
     private String time ;
-    private Bitmap image;
+    private String image;
     private String PostUrl;
 
-    public Post(String title, String time, Bitmap image, String postUrl) {
+    public Post() {
+    }
+
+    public Post(String title, String time, String image, String postUrl) {
         this.title = title;
         this.time = time;
         this.image = image;
-        this.PostUrl = postUrl;
+        PostUrl = postUrl;
     }
 
     public String getTitle() {
@@ -32,12 +35,12 @@ public class Post {
         this.time = time;
     }
 
-    public Bitmap getImageUrl() {
+    public String getImage() {
         return image;
     }
 
-    public void setImageUrl(Bitmap image) {
-        this.image= image;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getPostUrl() {
