@@ -1,4 +1,4 @@
-package com.toru.blogapp.model;
+package com.toru.blogapp.homefregment.models.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -173,4 +173,5 @@ public class itemes {
     public void setEtag(String etag) {
         this.etag = etag;
     }
+
 }

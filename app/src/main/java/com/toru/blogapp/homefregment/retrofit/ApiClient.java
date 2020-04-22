@@ -1,4 +1,4 @@
-package com.toru.blogapp.retrofit;
+package com.toru.blogapp.homefregment.retrofit;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

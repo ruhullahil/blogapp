@@ -1,17 +1,12 @@
-package com.toru.blogapp;
+package com.toru.blogapp.homefregment.models.model;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.util.Log;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.toru.blogapp.model.itemes;
-import com.toru.blogapp.model.responceResult;
-import com.toru.blogapp.retrofit.ApiClient;
-import com.toru.blogapp.retrofit.ApiInterface;
+import com.toru.blogapp.homefregment.models.Post;
+import com.toru.blogapp.homefregment.retrofit.ApiClient;
+import com.toru.blogapp.homefregment.retrofit.ApiInterface;
 
 import java.io.IOException;
 import java.net.URL;

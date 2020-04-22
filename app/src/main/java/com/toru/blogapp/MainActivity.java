@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.toru.blogapp.addFregment.AddFragment;
+import com.toru.blogapp.bookMarkFregment.BookmarkFragment;
+import com.toru.blogapp.homefregment.ui.HomeFragment;
+import com.toru.blogapp.profileFregment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigation;

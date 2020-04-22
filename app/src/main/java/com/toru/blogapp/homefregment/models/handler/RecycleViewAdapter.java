@@ -1,9 +1,8 @@
-package com.toru.blogapp.handler;
+package com.toru.blogapp.homefregment.models.handler;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.toru.blogapp.MainActivity;
-import com.toru.blogapp.Post;
-import com.toru.blogapp.R;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
+import com.toru.blogapp.R;
+import com.toru.blogapp.homefregment.models.model.itemes;
+
 import java.net.URL;
 import java.util.List;
 
@@ -26,9 +23,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     //private final PublishSubject<String> onClickSubject = PublishSubject.create();
     Context mContext;
-    List<Post> mdata;
+    List<itemes> mdata;
 
-    public RecycleViewAdapter(Context mContext, List<Post> mdata) {
+    public RecycleViewAdapter(Context mContext, List<itemes> mdata) {
         this.mContext = mContext;
         this.mdata = mdata;
     }
@@ -45,8 +42,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.tvContact.setText(mdata.get(position).getTitle());
-        holder.tvbody.setText(mdata.get(position).getTime());
-        if (mdata.get(position).getImage() != null) {
+        holder.tvbody.setText(mdata.get(position).published);
+       /* if (mdata.get(position).getImage() != null) {
 
 
             new Thread(new Runnable(){
@@ -68,7 +65,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         } else {
             //holder.img.setImageBitmap();
-        }
+        }*/
 
 
     }

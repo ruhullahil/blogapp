@@ -1,4 +1,4 @@
-package com.toru.blogapp;
+package com.toru.blogapp.homefregment.models;
 
 import android.graphics.Bitmap;
 import android.media.Image;

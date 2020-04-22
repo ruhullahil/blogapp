@@ -1,6 +1,6 @@
-package com.toru.blogapp.retrofit;
+package com.toru.blogapp.homefregment.retrofit;
 
-import com.toru.blogapp.model.responceResult;
+import com.toru.blogapp.homefregment.models.model.responceResult;
 
 
 import retrofit2.Call;

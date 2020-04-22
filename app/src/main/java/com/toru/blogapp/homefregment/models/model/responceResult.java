@@ -1,4 +1,4 @@
-package com.toru.blogapp.model;
+package com.toru.blogapp.homefregment.models.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -19,6 +19,9 @@ public class responceResult {
         this.nextPageToken = nextPageToken;
         Items = items;
         this.etag = etag;
+    }
+
+    public responceResult() {
     }
 
     public String getKind() {
